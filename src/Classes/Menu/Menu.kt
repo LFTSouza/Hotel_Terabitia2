@@ -3,7 +3,12 @@ package Classes.Menu
 import Classes.CadastrarHospede
 import Classes.PesquisarHospede
 
-class Menu(private val cadastrarHospede: CadastrarHospede, private val pesquisarHospede: PesquisarHospede) {
+class Menu(
+    private val cadastrarHospede: CadastrarHospede,
+    private val pesquisarHospede: PesquisarHospede,
+    private val menureserva: Menureserva
+)
+{
 
     private val nomeHotel = "Sauble"
     private var interrompe = true;
@@ -13,12 +18,13 @@ class Menu(private val cadastrarHospede: CadastrarHospede, private val pesquisar
         println("Seja bem-vinda(o) ao hotel $nomeHotel, ${Usuariobj.nome} É um prazer ter você por aqui!");
 
         while (interrompe) {
-            println("\nCadastro de Hóspedes\n\n Selecione uma opção: \n1. Cadastrar \n2. Pesquisar \n3. Sair");
+            println("\nCadastro de Hóspedes\n\n Selecione uma opção: \n1. Cadastrar \n2. Pesquisar \n3. Reservas \n4.Sair");
             val escolha = readLine()?.toIntOrNull() ?: 0;
             when (escolha) {
                 1 -> cadastrarHospede.cadastro();
-                2 -> pesquisarHospede.pesquisar()
-                3 -> {
+                2 -> pesquisarHospede.pesquisar();
+                3 -> menureserva.menuReservas();
+                4 -> {
                     println("Você deseja sair? S/N")
                     if (readLine()?.equals("S", ignoreCase = true) == true) {
                         println("Muito obrigado e até logo, ${Usuariobj.nome}");
