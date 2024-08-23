@@ -1,13 +1,10 @@
 package Classes
 
-class GravarHospede {
-    private val hospede = mutableListOf<String>();
+import Interfaces.IGravar
 
-    fun getHospede(): List<String> {
-        return hospede.toList();
-    }
-
-    fun adcionarHospede(hopede: String) {
-        hospede.add(hopede);
+open class GravarHospede(private val caminhoHospede: CaminhoHospede): IGravar {
+    override fun gravar(hospede: String)
+    {
+        caminhoHospede.adcionarHospede(hospede);
     }
 }

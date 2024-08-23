@@ -13,6 +13,5 @@ class Usuario {
             println("Senha incorreta");
             usuario();
         }
-        Menu().menu();
     }
 }

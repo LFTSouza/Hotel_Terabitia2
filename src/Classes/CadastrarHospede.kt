@@ -1,23 +1,14 @@
 package Classes
 
-import Classes.Menu.Menu
-
-class CadastrarHospede {
-
-    private val hospede = GravarHospede();
-    private var sair = true;
+class CadastrarHospede(private val gravarHospede: GravarHospede,
+                       private val caminhoHospede: CaminhoHospede)
+{
 
     fun cadastro() {
-        val menu = Menu();
-
-        while (sair) {
             print("Cadastro de Hóspedes. \nPor favor, informe o nome do Hóspede: ");
             val novoHospede = readLine() ?: "";
-            hospede.adcionarHospede(novoHospede);
+            gravarHospede.gravar(novoHospede);
             println("$novoHospede cadastrado com sucesso!");
-            println(hospede.getHospede());
-            sair = false;
-        }
-        menu.menu();
+            println(caminhoHospede.getHospede());
     }
 }
