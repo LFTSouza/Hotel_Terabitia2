@@ -4,11 +4,11 @@ import Classes.Menu.Menureserva
 import Classes.Menu.Usuario
 
 fun main() {
-    val caminho = CaminhoHospede();
+    val caminho = CaminhoHospedeNome();
     val caminhoRooms = CaminhoRooms();
     val usuario = Usuario();
     val chooseRoom = ChooseRoom(caminhoRooms);
-    val gravar = GravarHospede(caminho)
+    val gravar = GravarHospede(caminho);
     val cadastro = CadastrarHospede(gravar, caminho);
     val pesquisar = PesquisarHospede(caminho);
     val reservaQuartos = ReservaQuartos(pesquisar, chooseRoom);

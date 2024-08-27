@@ -1,9 +1,8 @@
 package Classes
 
 import Classes.Menu.HospedeObj.hospedeNome
-import Classes.Menu.Menu
 
-class PesquisarHospede(private val caminho: CaminhoHospede) {
+class PesquisarHospede(private val caminho: CaminhoHospedeNome) {
     fun pesquisar() {
         print("Pesquisa de Hóspedes. \nPor favor, informe o nome do Hóspede: ");
         val nome = readLine() ?: "";
