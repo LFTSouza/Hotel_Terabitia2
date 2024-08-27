@@ -1,6 +1,10 @@
 package Classes.Menu
 
-class Menureserva {
+import Classes.ReservaQuartos
+
+class Menureserva(
+        private val reservaQuartos: ReservaQuartos
+){
     fun menuReservas() {
         while (true) {
             println("Selecione uma opção:\n1.) Reserva de Quartos\n2.) Cadastro de Hóspedes\n3.) Abastecimento de Carros\n4.) Sair")
@@ -8,7 +12,7 @@ class Menureserva {
             val escolha = readLine()?.toIntOrNull() ?: 0
 
             when (escolha) {
-                1 -> println("HOTEL {NOME DO HOTEL} - RESERVA DE QUARTOS")
+                1 -> reservaQuartos.diarias();
                 2 -> println("HOTEL {NOME DO HOTEL} - CADASTRO DE HÓSPEDES")
                 3 -> println("HOTEL {NOME DO HOTEL} - ABASTECER")
                 4 -> {

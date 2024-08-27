@@ -1,5 +1,5 @@
 package Classes.Menu
 
 object Usuariobj {
-    var nome: String = ""
+    var nome: String = "";
 }
