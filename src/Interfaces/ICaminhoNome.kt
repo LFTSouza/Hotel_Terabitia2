@@ -1,6 +1,6 @@
 package Interfaces
 
-interface ICaminho {
+interface ICaminhoNome {
     fun adcionarHospede(hospede: String);
     fun getHospede():List<String>;
 }

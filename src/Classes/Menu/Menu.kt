@@ -2,11 +2,12 @@ package Classes.Menu
 
 import Classes.CadastrarHospede
 import Classes.PesquisarHospede
+import Objects.Usuariobj
 
 class Menu(
     private val cadastrarHospede: CadastrarHospede,
     private val pesquisarHospede: PesquisarHospede,
-    private val menureserva: Menureserva
+    private val menureserva: Menureserva,
 )
 {
 
@@ -29,11 +30,11 @@ class Menu(
                     if (readLine()?.equals("S", ignoreCase = true) == true) {
                         println("Muito obrigado e até logo, ${Usuariobj.nome}");
                         interrompe = false;
-                    }
-                }
+                    };
+                };
 
                 else -> println("Por favor, informe um número entre 1 e 3")
-            }
-        }
-    }
-}
+            };
+        };
+    };
+};

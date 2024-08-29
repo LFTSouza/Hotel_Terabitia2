@@ -1,5 +1,7 @@
 package Classes.Menu
 
+import Objects.Usuariobj
+
 class Usuario {
 
     fun usuario() {

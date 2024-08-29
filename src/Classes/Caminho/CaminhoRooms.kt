@@ -1,4 +1,4 @@
-package Classes
+package Classes.Caminho
 
 class CaminhoRooms {
     val quartos =

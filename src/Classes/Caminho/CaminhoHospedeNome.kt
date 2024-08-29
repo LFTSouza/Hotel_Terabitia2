@@ -1,8 +1,8 @@
-package Classes
+package Classes.Caminho
 
-import Interfaces.ICaminho
+import Interfaces.ICaminhoNome
 
-open class CaminhoHospedeNome : ICaminho {
+open class CaminhoHospedeNome : ICaminhoNome {
     private val hospede = mutableListOf<String>();
 
     override fun getHospede(): List<String> {

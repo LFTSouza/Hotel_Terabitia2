@@ -1,4 +1,4 @@
-package Classes.Menu
+package Objects
 
 object HospedeObj {
     var hospedeNome: String = "";

@@ -1,9 +1,10 @@
 package Classes
 
-import Classes.Menu.DaysQntDaysObj.day
-import Classes.Menu.DaysQntDaysObj.qntDays
-import Classes.Menu.HospedeObj.hospedeNome
-import Classes.Menu.Usuariobj
+import Classes.Caminho.CaminhoRooms
+import Objects.DaysQntDaysObj.day
+import Objects.DaysQntDaysObj.qntDays
+import Objects.HospedeObj.hospedeNome
+import Objects.Usuariobj
 
 class ChooseRoom(private val caminhoRooms: CaminhoRooms) {
     fun choose() {
