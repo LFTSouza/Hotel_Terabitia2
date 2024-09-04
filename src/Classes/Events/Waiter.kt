@@ -1,5 +1,6 @@
 package Classes.Events
 
+import Objects.DateObj
 import Objects.PeopleEnvitedObj
 import Objects.WaiterPayment
 import Objects.WaitersObj
@@ -11,6 +12,7 @@ class Waiter(
     fun waiterHour() {
         println("Qual a duração do evento em horas?");
         val chooseAnswer = readLine()?.toIntOrNull() ?: 0;
+        DateObj.hourEventFinal = chooseAnswer;
         when {
             chooseAnswer <= 0 -> {
                 println("Por favor, digite um número positivo");
@@ -29,18 +31,10 @@ class Waiter(
     }
 
     private fun calculateWaiters(durationHours: Int, numberOfGuests: Int): Double {
-        val waitersPerHour = durationHours * 0.5;
-        val waitersPerGuest = numberOfGuests * 0.05;
-
-        val waitersNeed = (durationHours * waitersPerHour + numberOfGuests * waitersPerGuest);
-        val rounded = waitersNeed.toBigDecimal().setScale(1, RoundingMode.UP).toDouble();
-        return rounded;
+        val numGuests = numberOfGuests / 12;
+        val numDuration = durationHours / 2;
+        val waiterPorHour = numDuration * 2;
+        val totalWaiter = numGuests + waiterPorHour;
+       return totalWaiter.toDouble();
     }
 }
-/*
-* garçom = RS 10.50/hora
-* receba um numero de garçons
-* receba o numero de hrs do evento
-* para cada 12 convidados é necessário 1 garçom
-* para cada 2h de evento +1 garçom
-* */

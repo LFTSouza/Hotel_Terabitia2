@@ -1,5 +1,6 @@
 package Classes.Menu
 
+import Classes.Abastecer.Abastecer
 import Classes.Events.EventDate
 import Classes.Events.EventOrganization
 import Classes.ReservaQuartos
@@ -7,7 +8,8 @@ import Classes.ReservaQuartos
 class Menureserva(
     private val reservaQuartos: ReservaQuartos,
     private val menuCadastro: MenuCadastro,
-    private val eventOrganization: EventOrganization
+    private val eventOrganization: EventOrganization,
+    private val abastecer: Abastecer
 ) {
     fun menuReservas() {
         while (true) {
@@ -18,7 +20,7 @@ class Menureserva(
             when (escolha) {
                 1 -> reservaQuartos.diarias();
                 2 -> menuCadastro.menuCadastro();
-                3 -> println("HOTEL {NOME DO HOTEL} - ABASTECER");
+                3 -> abastecer.abastecer();
                 4 -> eventOrganization.location();
                 5 -> {
                     println("Você deseja sair? S/N")

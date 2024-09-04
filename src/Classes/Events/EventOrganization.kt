@@ -17,24 +17,24 @@ class EventOrganization(
         when {
             (peopleEnvited > 350 || peopleEnvited <= 0) -> {
                 if (peopleEnvited > 350) {
-                    println("Quantidade de convidados superior à capacidade máxima")
+                    println("Quantidade de convidados superior à capacidade máxima ou informe uma quantidade máxima");
                     location();
                 };
                 location();
             };
             (peopleEnvited > 220) -> {
                 println("O auditório colorado é preferivel");
-                ColoradoOuLaranjaObj.colorado = colorado;
+                ColoradoOuLaranjaObj.auditorio = colorado;
                 println("Agora vamos ver o agendamento do evento");
             };
             (peopleEnvited > 150) -> {
-                println("Use o auditório laranja (inclua mais ${peopleEnvited - 70} cadeiras)");
-                ColoradoOuLaranjaObj.laranja = laranja;
+                println("Use o auditório laranja (inclua mais ${(150 + 70) - peopleEnvited} cadeiras)");
+                ColoradoOuLaranjaObj.auditorio = laranja;
                 println("Agora vamos ver o agendamento do evento");
             };
             (peopleEnvited in 1..150) -> {
                 println("Use o auditório laranja")
-                ColoradoOuLaranjaObj.laranja = laranja;
+                ColoradoOuLaranjaObj.auditorio = laranja;
             };
         };
         eventDates.date();
