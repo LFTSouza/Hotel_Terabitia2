@@ -12,50 +12,46 @@ class Abastecer {
         val priceAlchoolStark = readln().toDouble();
         println("Qual o valor do gasolina no posto Stark petrol?");
         val priceGasStark = readln().toDouble();
-        val porcent: Double;
         when {
             priceGasWayne < priceGasStark || priceAlchoolWayne < priceGasStark -> {
                 if (priceGasWayne > priceAlchoolWayne) {
-                    val sub = priceGasWayne - priceAlchoolWayne;
-                    porcent = sub / priceGasWayne * 100;
-                    if (porcent >= 30) {
-                        println("${Usuariobj.nome}, é mais barato abastecer com álcool no posto Wayne Oil.");
-                    } else {
-                        println("${Usuariobj.nome}, é mais barato abastecer com gasolina no posto Wayne Oil.");
-                    }
+                    porcentCalculator(priceGasWayne, priceAlchoolWayne);
                 } else if (priceGasWayne < priceAlchoolWayne) {
-                    val sub = priceAlchoolWayne - priceGasWayne;
-                    porcent = sub / priceAlchoolWayne * 100;
-                    if (porcent >= 30) {
-                        println("${Usuariobj.nome}, é mais barato abastecer com álcool no posto Wayne Oil.");
-                    } else {
-                        println("${Usuariobj.nome}, é mais barato abastecer com gasolina no posto Wayne Oil.");
-                    }
-                }
-            }
+                    porcentCalculator(priceAlchoolWayne, priceGasWayne);
+                };
+            };
 
             priceGasWayne > priceGasStark || priceAlchoolWayne > priceGasStark -> {
                 if (priceGasStark > priceAlchoolStark) {
-                    val sub = priceGasStark - priceAlchoolStark;
-                    porcent = sub / priceGasStark * 100;
-                    if (porcent >= 30) {
-                        println("${Usuariobj.nome}, é mais barato abastecer com álcool no posto Stark Petrol.");
-                    } else {
-                        println("${Usuariobj.nome}, é mais barato abastecer com gasolina no posto Stark Petrol.");
-                    }
+                    porcentCalculator(priceGasStark, priceAlchoolStark);
                 } else if (priceGasStark < priceAlchoolStark) {
-                    val sub = priceAlchoolStark - priceGasStark;
-                    porcent = sub / priceAlchoolStark * 100;
-                    if (porcent >= 30) {
-                        println("${Usuariobj.nome}, é mais barato abastecer com álcool no posto Stark Petrol.");
-                    } else {
-                        println("${Usuariobj.nome}, é mais barato abastecer com gasolina no posto Stark Petrol.");
-                    }
-                }
-            }
-        }
-    }
-}
+                    porcentCalculator(priceAlchoolStark, priceGasStark);
+                };
+            };
+        };
+    };
+
+    private fun porcentCalculator(price1: Double, price2: Double) {
+        val porcent: Double;
+        if (price1 > price2) {
+            val sub = price1 - price2;
+            porcent = sub / price1 * 100;
+            if (porcent >= 30) {
+                println("${Usuariobj.nome}, é mais barato abastecer com álcool no posto Wayne Oil.");
+            } else {
+                println("${Usuariobj.nome}, é mais barato abastecer com gasolina no posto Wayne Oil.");
+            };
+        } else if (price2 > price1) {
+            val sub = price2 - price1;
+            porcent = sub / price2 * 100;
+            if (porcent >= 30) {
+                println("${Usuariobj.nome}, é mais barato abastecer com álcool no posto Wayne Oil.");
+            } else {
+                println("${Usuariobj.nome}, é mais barato abastecer com gasolina no posto Wayne Oil.");
+            };
+        };
+    };
+};
 /*
 * informar os valores de alcool e gasolina;
 * calcular qual combustivel é mais atraente? e mais barato;
