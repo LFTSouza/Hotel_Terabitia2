@@ -61,9 +61,9 @@ class CadastrarHospede(
 
                 gravarHospedeIdade.gravarIdade(novoIdadeHospede);
                 println("Deseja encerrar o cadastro? Digite PARE para parar");
-                stop = readln();
+                stop = readln().lowercase();
             }
-        } while (stop != "Pare");
+        } while (stop != "pare");
 
         println("$novoNomeHospede cadastrado com sucesso!");
         println("======//======");

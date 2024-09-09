@@ -28,11 +28,11 @@ class ReportEvent() {
 
     fun reserve(escohla: String) {
         when (escohla) {
-            "sim" -> {
+            "s" -> {
                 println("${Usuariobj.nome}, reserva efetuada com sucesso!");
             }
 
-            "não" -> {
+            "n" -> {
                 println("Reserva cancelada");
 
             }

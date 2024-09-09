@@ -19,7 +19,7 @@ class Menu(
         println("Seja bem-vinda(o) ao hotel $nomeHotel, ${Usuariobj.nome} É um prazer ter você por aqui!");
 
         while (interrompe) {
-            println("\nCadastro de Hóspedes\n\n Selecione uma opção: \n1. Cadastrar \n2. Pesquisar \n3. Reservas \n4.Sair");
+            println("\nCadastro de Hóspedes\n\n Selecione uma opção: \n1. Cadastrar \n2. Pesquisar \n3. Gerenciamento \n4. Sair");
             val escolha = readLine()?.toIntOrNull() ?: 0;
             when (escolha) {
                 1 -> cadastrarHospede.cadastro();

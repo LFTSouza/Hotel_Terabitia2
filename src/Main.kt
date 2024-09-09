@@ -1,5 +1,6 @@
 import Classes.*
 import Classes.Abastecer.Abastecer
+import Classes.Air.Air_conditioning
 import Classes.CadastrarHospede
 import Classes.Caminho.CaminhoHospedeIdade
 import Classes.Caminho.CaminhoHospedeNome
@@ -31,13 +32,13 @@ fun main() {
     val chooseRoom = ChooseRoom(caminhoRooms);
     val gravar = GravarHospedeNome(caminhoNome);
     val cadastro = CadastrarHospede(gravar, gravarHospedeIdade, caminhoNome, diarias);
-    val pesquisar = PesquisarHospede(caminhoNome);
+    val pesquisar = PesquisarHospede(caminhoNome, cadastro);
     val reservaQuartos = ReservaQuartos(pesquisar, chooseRoom, diarias);
     val menuCadastro = MenuCadastro(cadastro, pesquisar, showNames);
     val abastecer = Abastecer();
-    val menuReserva = Menureserva(reservaQuartos, menuCadastro, eventOraganiation, abastecer);
+    val airConditioning = Air_conditioning();
+    val menuReserva = Menureserva(reservaQuartos, menuCadastro, eventOraganiation, abastecer, airConditioning);
     val menu = Menu(cadastro, pesquisar, menuReserva);
-
 
     usuario.usuario();
     menu.menu();
